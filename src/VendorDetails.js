@@ -72,3 +72,4 @@ const VendorDetails = () => {
 };
 
 export default VendorDetails;
+  

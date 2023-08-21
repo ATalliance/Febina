@@ -18,7 +18,7 @@ const VendorDetails = () => {
     };
 
     try {
-      const response = await fetch("/submit", {
+      const response = await fetch("http://localhost:2000/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -62,7 +62,10 @@ const VendorDetails = () => {
         <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder="10-digit number" />
         
         <label htmlFor="gst">GST:</label>
-        <input type="text" id="gst" name="gst" />
+<input type="text" id="gst" name="gst" required pattern="[A-Z0-9]{15}"
+       title="Invalid GST number format. GST number should be a 15-character string containing only letters and numbers." />
+
+
         
         <button type="submit">Submit</button>
       </form>
